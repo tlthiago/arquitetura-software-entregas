@@ -1,0 +1,7 @@
+HTTP/1.1 404 Not Found
+date: Fri, 28 Aug 2026 15:37:48 GMT
+server: uvicorn
+content-length: 112
+content-type: application/json
+
+{"codigo":"elegibilidade_nao_encontrada","mensagem":"Protocolo de elegibilidade não encontrado.","detalhes":[]}

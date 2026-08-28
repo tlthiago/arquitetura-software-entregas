@@ -1,0 +1,8 @@
+HTTP/1.1 202 Accepted
+date: Fri, 28 Aug 2026 15:37:36 GMT
+server: uvicorn
+content-length: 116
+content-type: application/json
+location: /elegibilidades/c7a6d857-c672-4f8e-8640-bfdf5f603127
+
+{"protocolo":"c7a6d857-c672-4f8e-8640-bfdf5f603127","situacao":"recebida","criado_em":"2026-08-28T15:37:36.677474Z"}

@@ -1,0 +1,16 @@
+meta {
+  name: Consulta uma elegibilidade aceita
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/elegibilidades/:protocolo
+  body: none
+  auth: none
+}
+
+params:path {
+  @description('Identificador retornado na aceitação do pedido.')
+  protocolo: c7a6d857-c672-4f8e-8640-bfdf5f603127
+}
