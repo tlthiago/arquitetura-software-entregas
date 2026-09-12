@@ -1,0 +1,7 @@
+HTTP/1.1 201 Created
+date: Sat, 12 Sep 2026 22:50:24 GMT
+server: uvicorn
+content-length: 102
+content-type: application/json
+
+{"beneficiario_id":"paciente-001","codigo_exame":"HEM-001","solicitacao_id":1,"situacao":"solicitado"}

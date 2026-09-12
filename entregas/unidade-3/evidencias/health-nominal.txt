@@ -1,0 +1,18 @@
+=== GET /health elegibilidade ===
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 22:50:22 GMT
+server: uvicorn
+content-length: 41
+content-type: application/json
+
+{"status":"ok","servico":"elegibilidade"}
+
+
+=== GET /health exames ===
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 22:50:21 GMT
+server: uvicorn
+content-length: 34
+content-type: application/json
+
+{"status":"ok","servico":"exames"}

@@ -1,0 +1,11 @@
+=== após up -d --wait ===
+SERVICE            STATUS
+db_elegibilidade   Up 45 seconds (healthy)
+db_exames          Up 45 seconds (healthy)
+elegibilidade      Up 3 seconds (healthy)
+exames             Up 39 seconds (healthy)
+
+GET /health elegibilidade:
+HTTP 200
+GET /health exames:
+HTTP 200

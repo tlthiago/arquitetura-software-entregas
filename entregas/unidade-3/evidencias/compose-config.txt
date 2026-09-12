@@ -1,0 +1,8 @@
+$ docker compose -f infra/compose.servicos.yml config --quiet
+código de saída: 0
+
+$ docker compose -f infra/compose.servicos.yml config --services
+db_exames
+db_elegibilidade
+elegibilidade
+exames

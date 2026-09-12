@@ -1,0 +1,5 @@
+SERVICE            STATUS                    PORTS
+db_elegibilidade   Up 12 seconds (healthy)   5432/tcp
+db_exames          Up 12 seconds (healthy)   5432/tcp
+elegibilidade      Up 10 seconds (healthy)   0.0.0.0:18001->8000/tcp, [::]:18001->8000/tcp
+exames             Up 7 seconds (healthy)    0.0.0.0:18002->8000/tcp, [::]:18002->8000/tcp

@@ -74,3 +74,32 @@ respostas às cinco questões exploratórias.
 Duas observações que valem antes de repetir a oficina: `pip install -e ".[dev]"` não
 instala o `PyYAML` que `test_api_contract.py` importa, e os testes de contrato são sete,
 não os seis que o roteiro indica. Ambas estão detalhadas na nota.
+
+## Unidade 3 — Oficina de ferramentas: dois serviços, dois bancos e uma falha parcial
+
+[Roteiro da oficina](https://marco-mendes.github.io/arquitetura-software/modulo-3-servicos/oficina-de-ferramentas/)
+
+Dois serviços em contêineres, cada um com seu PostgreSQL, subidos com Docker Compose a
+partir de `laboratorios/plataforma-hospitalar/infra/compose.servicos.yml`. Parei o
+serviço de Elegibilidade para observar a falha parcial e depois recuperei o ambiente.
+
+As evidências estão em [`entregas/unidade-3/evidencias/`](entregas/unidade-3/evidencias):
+
+| Arquivo | O que mostra |
+| --- | --- |
+| `versoes.txt` | Docker 29.6.2, Compose v5.3.1, Python 3.12.14 |
+| `compose-config.txt` | `config --quiet` com código `0` e os quatro serviços |
+| `ps-nominal.txt` | quatro contêineres `healthy`; bancos sem porta publicada |
+| `health-nominal.txt` | `200` nos dois `/health` |
+| `post-201.txt` | `201 Created` com `solicitacao_id` |
+| `ps-degradado.txt` | Elegibilidade `Exited`, Exames ainda `healthy` |
+| `falha-parcial.txt` | `503` e `200` do mesmo serviço, no mesmo segundo |
+| `traducao-de-erros.txt` | quatro linhas da tabela de tradução, com os dois lados |
+| `recuperacao.txt` | os quatro `healthy` de novo após `up -d --wait` |
+| `testes-fronteiras.txt` | `4 passed` em `test_service_boundaries.py` |
+| `testes-sem-compose.txt` | os mesmos `4 passed` com o Docker já derrubado |
+| `limpeza.txt` | `down -v` e `ps -a` vazio |
+
+**A nota está em [`observacoes.md`](entregas/unidade-3/observacoes.md)** — a resposta à
+questão exploratória, a leitura do health check auto-referente, a fronteira declarada nas
+três redes e o que os testes provam sem o Compose.

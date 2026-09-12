@@ -1,0 +1,18 @@
+=== POST /exames (mesma requisição que deu 201) ===
+HTTP/1.1 503 Service Unavailable
+date: Sat, 12 Sep 2026 22:50:34 GMT
+server: uvicorn
+content-length: 48
+content-type: application/json
+
+{"detail":{"codigo":"dependencia_indisponivel"}}
+
+
+=== GET /health do MESMO serviço, no mesmo instante ===
+HTTP/1.1 200 OK
+date: Sat, 12 Sep 2026 22:50:34 GMT
+server: uvicorn
+content-length: 34
+content-type: application/json
+
+{"status":"ok","servico":"exames"}

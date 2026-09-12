@@ -1,0 +1,7 @@
+Contexto: executado APÓS 'down -v'. Nenhum contêiner, rede ou volume da demonstração existe.
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+
+$ python -m pytest tests/test_service_boundaries.py -q
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+4 passed, 1 warning in 0.13s

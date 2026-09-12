@@ -1,0 +1,5 @@
+SERVICE            STATUS
+db_elegibilidade   Up 25 seconds (healthy)
+db_exames          Up 25 seconds (healthy)
+elegibilidade      Exited (0) Less than a second ago
+exames             Up 19 seconds (healthy)

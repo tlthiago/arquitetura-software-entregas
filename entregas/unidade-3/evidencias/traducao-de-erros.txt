@@ -1,0 +1,14 @@
+Tabela de tradução do roteiro, exercitada com Elegibilidade NO AR.
+
+════════ paciente-001 — existe e É elegível ════════
+  Elegibilidade  → HTTP 200  {"beneficiario_id":"paciente-001","elegivel":true}
+  Exames         → HTTP 201  {"beneficiario_id":"paciente-001","codigo_exame":"HEM-001","solicitacao_id":4,"situacao":"solicitado"}
+
+════════ paciente-002 — existe e NÃO é elegível ════════
+  Elegibilidade  → HTTP 200  {"beneficiario_id":"paciente-002","elegivel":false}
+  Exames         → HTTP 422  {"detail":{"codigo":"beneficiario_inelegivel"}}
+
+════════ paciente-999 — DESCONHECIDO ════════
+  Elegibilidade  → HTTP 404  {"detail":{"codigo":"beneficiario_nao_encontrado"}}
+  Exames         → HTTP 422  {"detail":{"codigo":"beneficiario_desconhecido"}}
+
