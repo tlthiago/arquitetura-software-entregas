@@ -1,0 +1,11 @@
+Topologia ao final da oficina, com a mensagem inválida presente na DLQ.
+Contagens lidas no endpoint de cada fila (/api/queues/%2F/<fila>), não no de listagem:
+o endpoint de listagem devolve estatística agregada e estava defasado em zero.
+
+=== filas ===
+  billing.resultados.v1            mensagens=0  durável=True
+  billing.resultados.v1.dlq        mensagens=1  durável=True
+
+=== exchanges do domínio ===
+  hospital.events                  tipo=topic
+  hospital.events.dlx              tipo=direct

@@ -1,0 +1,6 @@
+=== docker version ===
+Client 29.6.2 / Server 29.6.2
+=== docker compose version ===
+Docker Compose version v5.3.1
+=== python ===
+Python 3.12.14

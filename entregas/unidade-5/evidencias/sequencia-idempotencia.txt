@@ -1,0 +1,13 @@
+$ consumidor --once   (declara a fila; ela está vazia)
+
+$ publicador --event-id 3fa85f64-5717-4562-b3fc-2c963f66afa6   (1a publicação)
+Publicado: ResultadoLaboratorialDisponibilizado.v1 event_id=3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+$ consumidor --once   (1a entrega)
+ResultadoLaboratorialDisponibilizado.v1 event_id=3fa85f64-5717-4562-b3fc-2c963f66afa6 processed=True attempts=1
+
+$ publicador --event-id 3fa85f64-5717-4562-b3fc-2c963f66afa6   (2a publicação, MESMO event_id)
+Publicado: ResultadoLaboratorialDisponibilizado.v1 event_id=3fa85f64-5717-4562-b3fc-2c963f66afa6
+
+$ consumidor --once   (2a entrega, redelivery sintético)
+ResultadoLaboratorialDisponibilizado.v1 event_id=3fa85f64-5717-4562-b3fc-2c963f66afa6 processed=False attempts=2

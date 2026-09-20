@@ -1,0 +1,4 @@
+$ COMPOSE_LIVE=1 pytest tests/test_event_idempotency.py -q
+
+...                                                                      [100%]
+3 passed in 0.13s

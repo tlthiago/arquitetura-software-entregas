@@ -1,0 +1,12 @@
+$ docker compose -f infra/compose.eventos.yml down -v
+ Container infra-rabbitmq-1 Stopping 
+ Container infra-rabbitmq-1 Stopped 
+ Container infra-rabbitmq-1 Removing 
+ Container infra-rabbitmq-1 Removed 
+ Network infra_default Removing 
+ Volume infra_rabbitmq_eventos_data Removing 
+ Volume infra_rabbitmq_eventos_data Removed 
+ Network infra_default Removed 
+
+$ docker compose -f infra/compose.eventos.yml ps -a
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS

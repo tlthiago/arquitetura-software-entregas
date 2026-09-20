@@ -1,0 +1,9 @@
+$ consulta ao processed-events.sqlite3
+
+processed_events (event_id, attempts):
+    ('3fa85f64-5717-4562-b3fc-2c963f66afa6', 2)
+
+billing_effects — contagem: 1
+
+billing_effects — colunas: ['event_id', 'exam_id', 'patient_id', 'result_reference', 'created_at']
+    ('3fa85f64-5717-4562-b3fc-2c963f66afa6', 'exam-sintetico-001', 'patient-sintetico-001', 'resultados/exam-sintetico-001', '2026-09-20 22:03:32')

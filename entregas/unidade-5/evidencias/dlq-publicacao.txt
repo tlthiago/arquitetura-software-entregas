@@ -1,0 +1,6 @@
+$ publicador --event-id 65e95d82-... --invalid   (payload sem result_reference)
+Publicado: ResultadoLaboratorialDisponibilizado.v1 event_id=65e95d82-4f8c-4e93-9bb3-3e0e92deaf1d
+
+$ consumidor --once   (valida o schema e rejeita)
+Mensagem rejeitada para DLQ: schema inválido (1 erro)
+(sem linha de processamento acima = a mensagem não virou efeito)

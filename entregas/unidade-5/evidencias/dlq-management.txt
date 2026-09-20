@@ -1,0 +1,10 @@
+$ curl -u guest:guest http://localhost:15673/api/queues/%2F/billing.resultados.v1.dlq
+
+fila            : billing.resultados.v1.dlq
+mensagens       : 1
+prontas         : 1
+durável         : True
+
+Comparação — fila de trabalho principal:
+fila            : billing.resultados.v1
+mensagens       : 0

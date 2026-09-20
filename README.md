@@ -103,3 +103,36 @@ As evidências estão em [`entregas/unidade-3/evidencias/`](entregas/unidade-3/e
 **A nota está em [`observacoes.md`](entregas/unidade-3/observacoes.md)** — a resposta à
 questão exploratória, a leitura do health check auto-referente, a fronteira declarada nas
 três redes e o que os testes provam sem o Compose.
+
+## Unidade 5 — Oficina de ferramentas: RabbitMQ e consumidor idempotente
+
+[Roteiro da oficina](https://marco-mendes.github.io/arquitetura-software/modulo-5-eventos/oficina-de-ferramentas/)
+
+RabbitMQ 4 em contêiner, um evento publicado duas vezes com o mesmo `event_id`, e uma
+mensagem fora do contrato encaminhada à dead-letter queue. O código em
+[`codigo/`](entregas/unidade-5/codigo) é o de `oficinas/modulo-5` do repositório da
+disciplina, sem alterações.
+
+Evidências em [`entregas/unidade-5/evidencias/`](entregas/unidade-5/evidencias):
+
+| Arquivo | O que mostra |
+| --- | --- |
+| `versoes.txt` | Docker 29.6.2, Compose v5.3.1, Python 3.12.14 |
+| `compose-config.txt` | `config --quiet` com código `0` |
+| `ps-broker.txt` | RabbitMQ `healthy`, AMQP em 15672 e management em 15673 |
+| `sequencia-idempotencia.txt` | `processed=True attempts=1` e `processed=False attempts=2` |
+| `consulta-sqlite.txt` | duas tentativas registradas, uma única linha de efeito |
+| `dlq-publicacao.txt` | a mensagem inválida recusada na validação do schema |
+| `dlq-management.txt` | `billing.resultados.v1.dlq` com 1 mensagem, fila principal com 0 |
+| `topologia.txt` | exchange topic, fila de trabalho, DLX direct e DLQ |
+| `testes-offline.txt` | `2 passed, 1 skipped` sem broker |
+| `testes-compose-live.txt` | `3 passed` com `COMPOSE_LIVE=1` |
+| `limpeza.txt` | `down -v` e `ps -a` vazio |
+
+**A nota está em [`observacoes.md`](entregas/unidade-5/observacoes.md)** — a leitura da
+idempotência, a ordem das duas decisões do consumidor, por que o arranjo é entrega pelo
+menos uma vez e não exactly-once, e em que cenário Kafka valeria como extensão.
+
+Uma observação que vale antes de repetir a oficina: os dois endpoints do management API
+discordam sobre a contagem da DLQ. O de listagem devolve estatística agregada com
+atraso; consulte o endpoint de cada fila. Está detalhado na nota.
